@@ -180,15 +180,39 @@ st.markdown("From the plot, we can see that as the CPU frequency increases, the 
 st.subheader("Graph 5 Price(Euro) According to Screen Size")
 #u can edit the graph name part
 
+def scatter_plot():
+    plt.figure(figsize=(15, 6))
+    size = laptopData['Inches']
+    price = laptopData['Price (Euro)']
+    plt.scatter(size, price, color='purple')
+    plt.title('Price(Euro) According to Screen Size')
+    plt.xlabel('Size')
+    plt.ylabel('Price(Euro)')
+    st.pyplot(plt)
+
+scatter_plot()
+
 st.markdown('`Findings and Observations`')
-st.markdown("...")
+st.markdown("Based on the grarph given, the price tends to go higher when the size of the screen(in inches) becomes bigger as well. There are some that the price are relatively low but these laptops could be compromising on another aspect like the RAM or CPU. Overall, there is a clear sign that the higher the screen size, the higher the price goes.")
 # put the findings and observations here
 
-st.subheader("Graph 6")
+st.subheader("Graph 6 Price(Euro) According to GPU Company")
 #u can edit the graph name part 
 
+def scatter_plot():
+    plt.figure(figsize=(4, 6))
+    GPU = laptopData['GPU_Company']
+    price = laptopData['Price (Euro)']
+    plt.scatter(GPU, price, color='purple')
+    plt.title('Price(Euro) According to GPU Company')
+    plt.xlabel('GPU Company')
+    plt.ylabel('Price(Euro)')
+    st.pyplot(plt)
+
+scatter_plot()
+
 st.markdown('`Findings and Observations`')
-st.markdown("...")
+st.markdown("Based on the graph, most of the GPUs have a similar price range except for NVIDIA. Nvidia has the most expensive GPU comparedd to the other 3 GPU Manufacturers.")
 # put the findings and observations here
 
 st.subheader("Graph 7: Price vs Weight of Laptops")
