@@ -191,19 +191,34 @@ st.markdown('`Findings and Observations`')
 st.markdown("...")
 # put the findings and observations here
 
-st.subheader("Graph 7")
-#u can edit the graph name part
+st.subheader("Graph 7: Price vs Weight of Laptops")
+def scatter_plot():
+  plt.figure(figsize=(10, 6))
+  plt.scatter(x = laptopData['Weight (kg)'], y = laptopData['Price (Euro)'], color = 'blue')
+  plt.title('Price vs. Weight of Laptops', fontsize = 16)
+  plt.xlabel('Weight (kg)', fontsize = 12)
+  plt.ylabel('Price (Euro)', fontsize = 12)
+  st.pyplot(plt)          
+
+scatter_plot()
 
 st.markdown('`Findings and Observations`')
-st.markdown("...")
-# put the findings and observations here
+st.markdown("Based on the data visualization above, it can be gleaned that lighter laptops tend to have higher price ranges; they can be either cheap or expensive, while heavier ones tend to medium-ranged prices. Furthermore, there can be no significant linear trend that can be seen.")
 
-st.subheader("Graph 8")
-#u can edit the graph name part
+st.subheader("Graph 8: Price vs Screen Resolution of Laptops")
+def box_plot():
+  plt.figure(figsize=(14, 8))
+  sns.boxplot(x = laptopData['ScreenResolution'], y = laptopData['Price (Euro)'])
+  plt.xticks(rotation=90)
+  plt.title('Price vs. Screen Resolution of Laptops', fontsize=16)
+  plt.xlabel('Screen Resolution', fontsize=12)
+  plt.ylabel('Price (Euro)', fontsize=12)
+  st.pyplot(plt)
+
+box_plot()
 
 st.markdown('`Findings and Observations`')
-st.markdown("...")
-# put the findings and observations here
+st.markdown("According to the data visualization above, higher-resolution screens tend to have higher median prices! Additionally, lower-resolution screens, like 1440x900 or 1366x768, generally fall into the lower price range. And finally, some outliers exist, where high-resolution laptops are priced much lower or low-resolution laptops are priced unusually high.")
 
 #Graph 9
 st.subheader("Graph 9 Average Price by CPU and GPU company")
