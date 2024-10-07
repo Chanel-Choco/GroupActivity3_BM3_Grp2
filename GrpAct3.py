@@ -13,7 +13,9 @@ st.title('Group Activity 2')
 
 st.markdown("""    
 Section: BM3
+            
 Group Number: 2
+            
 Group Members:
 1. Boado, Julianna
 2. Caluag, John
@@ -24,7 +26,7 @@ Group Members:
 Data Used: Laptop Price Dataset [(https://www.kaggle.com/datasets/ironwolf404/laptop-price-dataset/data)](https://www.kaggle.com/datasets/ironwolf404/laptop-price-dataset/data)
 """)
 
-st.header("Importing Libiries")
+st.header("Importing Libraries")
 st.markdown("""    
 1. Matplotlib [(https://matplotlib.org/)](https://matplotlib.org/)
 2. Numpy [(https://numpy.org/)](https://numpy.org/)
@@ -43,44 +45,62 @@ laptopData = pd.read_csv("dataset/laptop_price - dataset.csv")
 
 laptopData
 
+st.write("Show information in the CSV dataset")
 buffer = StringIO()
 laptopData.info(buf=buffer)
 laptopData_info_as_string = buffer.getvalue()
 
 st.text(laptopData_info_as_string)
 
+st.write("Show column/data name and it number of null values")
 st.write(laptopData.isna().sum())
 
+st.write("Displays and computes CSV dataset")
 st.write(laptopData.describe())
 
+st.write("Displays 'Inches' data")
 st.write(laptopData['Inches'].value_counts())
 
+st.write("Displays 'CPU Frequency' data")
 st.write(laptopData['CPU_Frequency (GHz)'].value_counts())
 
+st.write("Displays 'RAM' data")
 st.write(laptopData['RAM (GB)'].value_counts())
 
+st.write("Displays 'Weight' data")
 st.write(laptopData['Weight (kg)'].value_counts())
 
+st.write("Displays 'Price' data")
 st.write(laptopData['Price (Euro)'].value_counts())
 
+st.write("Displays 'Company' data")
 st.write(laptopData['Company'].value_counts())
 
+st.write("Displays 'Product' data")
 st.write(laptopData['Product'].value_counts())
 
+st.write("Displays 'Type Name' data")
 st.write(laptopData['TypeName'].value_counts())
 
+st.write("Displays 'Screen Resolution' data")
 st.write(laptopData['ScreenResolution'].value_counts())
 
+st.write("Displays 'CPU Company' data")
 st.write(laptopData['CPU_Company'].value_counts())
 
+st.write("Displays 'CPU type' data")
 st.write(laptopData['CPU_Type'].value_counts())
 
+st.write("Displays 'Memory' data")
 st.write(laptopData['Memory'].value_counts())
 
+st.write("Displays 'GPU Company' data")
 st.write(laptopData['GPU_Company'].value_counts())
 
+st.write("Displays 'GPU Type' data")
 st.write(laptopData['GPU_Type'].value_counts())
 
+st.write("Displays 'Operating System' data")
 st.write(laptopData['OpSys'].value_counts())
 
 st.header("Graphs")
@@ -232,3 +252,17 @@ st.markdown("In conjunction with the visualization above, the heatmap analysis r
 
 
 st.header("Conclusion")
+st.markdown("""When it comes to laptops, Vero is the go-to for budget-conscious buyers looking for the best deals. Razer, on the other hand, offers a wide range of prices, which can be a bit overwhelming. Brands like HP and Dell often release high-end models that really stand out in terms of price. Meanwhile, companies like Mediacom and Fujitsu cater to value-seekers, keeping their prices consistently low.
+
+The operating system plays a big role in laptop pricing too. Laptops running Windows 10 usually command the highest prices. Interestingly, laptops that come without an operating system can still be pricier than expected, which makes you wonder if operating systems are the main factor driving costs.
+
+RAM capacity is another key element affecting prices. Models with 16 GB or more RAM generally cost more, reflecting its importance for performance. There’s also a trend where higher CPU frequencies lead to higher prices; top-tier CPUs often come with a premium. However, some brands manage to offer good specs at competitive prices, showing that a laptop's value isn't just about the brand name.
+
+Screen size is important as well—larger displays tend to be more expensive. But some models may skimp on RAM or CPU to keep costs down, highlighting the need for buyers to find a balance among features.
+
+In the GPU market, NVIDIA usually reigns supreme as the priciest option, solidifying its spot in the premium category, even though other brands might have similar price ranges. Lighter laptops often have a varied price range, suggesting that many buyers are willing to pay extra for portability, while larger laptops tend to be more budget-friendly.
+
+There’s a clear link between higher screen resolutions and higher prices. However, lower-resolution models are popular among budget shoppers, even if some high-resolution laptops come at surprisingly low prices.
+
+At last, the average price analysis by type of memory shows that Hard Disk Drives (HDDs) are more appealing to people who value greater storage capacity at a lesser cost, while Solid State Drives (SSDs) attract premium prices because of their superior performance. The major influence of CPU and GPU combinations on pricing is highlighted by the heatmap study. High-performance systems are dominated by combinations of Intel and Nvidia, whilst budget and mid-range systems are usually served by AMD combinations.
+""")
