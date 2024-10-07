@@ -177,7 +177,7 @@ st.markdown('`Findings and Observations`')
 st.markdown("From the plot, we can see that as the CPU frequency increases, the price of the laptops tends to rise as well. This means that laptops with faster CPUs generally cost more. However, there are some exceptions, with certain brands offering lower prices even when their specifications are high. This indicates that not all expensive laptops are from well-known brands, and some budget-friendly options provide excellent performance.")
 
 
-st.subheader("Graph 5")
+st.subheader("Graph 5 Price(Euro) According to Screen Size")
 #u can edit the graph name part
 
 st.markdown('`Findings and Observations`')
